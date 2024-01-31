@@ -19,6 +19,9 @@ jobs:
       - name: Install PHP Dependencies
         run: composer install
 
+      - name: Clear dist
+        run: npm run dist-clean
+
       - name: Build Project
         run: npm run dist-build
 
