@@ -1,6 +1,9 @@
 <?php
 
 function register_post_types() {
+	/**
+	 * Realty Post Type
+	 */
 	$labels = [
 		'name'                     => __( 'Realty', THEME_TEXTDOMAIN ),
 		'singular_name'            => __( 'Realty', THEME_TEXTDOMAIN ),
@@ -20,7 +23,6 @@ function register_post_types() {
 		'remove_featured_image'    => __( 'Remove Featured Image for This Realty', THEME_TEXTDOMAIN ),
 		'use_featured_image'       => __( 'Use As Featured Image for This Realty', THEME_TEXTDOMAIN ),
 		'archives'                 => __( 'Realty Archives', THEME_TEXTDOMAIN ),
-		'insert_into_item'         => __( 'Insert into Realty', THEME_TEXTDOMAIN ),
 		'uploaded_to_this_item'    => __( 'Upload to This Realty', THEME_TEXTDOMAIN ),
 		'filter_items_list'        => __( 'Filter Realty list', THEME_TEXTDOMAIN ),
 		'items_list_navigation'    => __( 'Realty List Navigation', THEME_TEXTDOMAIN ),
@@ -32,7 +34,6 @@ function register_post_types() {
 		'item_reverted_to_draft'   => __( 'Realty Reverted to Draft.', THEME_TEXTDOMAIN ),
 		'item_scheduled'           => __( 'Realty Scheduled', THEME_TEXTDOMAIN ),
 		'item_updated'             => __( 'Realty Updated.', THEME_TEXTDOMAIN ),
-		'parent_item_colon'        => __( 'Parent Realty:', THEME_TEXTDOMAIN ),
 	];
 
 	$args = [
@@ -60,6 +61,41 @@ function register_post_types() {
 	];
 
 	register_post_type( 'realty', $args );
+
+	/**
+	 * Realty Type Taxonomy
+	 */
+
+	$labels = [
+		'name'          => _x( 'Realty Types', 'taxonomy general name', THEME_TEXTDOMAIN ),
+		'singular_name' => _x( 'Realty Type', 'taxonomy singular name', THEME_TEXTDOMAIN ),
+		'search_items'  => __( 'Search Realty Types', THEME_TEXTDOMAIN ),
+		'all_items'     => __( 'All Realty Types', THEME_TEXTDOMAIN ),
+		'edit_item'     => __( 'Edit Realty Type', THEME_TEXTDOMAIN ),
+		'update_item'   => __( 'Update Realty Type', THEME_TEXTDOMAIN ),
+		'add_new_item'  => __( 'Add New Realty Type', THEME_TEXTDOMAIN ),
+		'new_item_name' => __( 'New Realty Type', THEME_TEXTDOMAIN ),
+		'menu_name'     => __( 'Realty Types', THEME_TEXTDOMAIN )
+	];
+
+	$args = [
+		'labels'             => $labels,
+		'public'             => false,
+		'publicly_queryable' => false,
+		'query_var'          => true,
+		'show_in_nav_menus'  => true,
+		'show_in_rest'       => true,
+		'show_ui'            => true,
+		'show_tagcloud'      => false,
+		'show_admin_column'  => true,
+		'supports'           => [ 'title' ],
+		'rewrite'            => [
+			'slug' => 'realty_type',
+		],
+		'hierarchical'       => true,
+	];
+
+	register_taxonomy( 'realty_type', 'realty', $args );
 }
 
 add_action( 'init', 'register_post_types' );
