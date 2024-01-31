@@ -6744,7 +6744,7 @@
 	})();
 
 	// Add your custom JS here.
-	console.log('Add your custom JS here12');
+	console.log('Test deploy');
 
 	exports.Alert = alert;
 	exports.Button = button;
