@@ -50,9 +50,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "2"
+                "value": "page-templates\/home.php"
             }
         ]
     ],
@@ -65,5 +65,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706724411
+    "modified": 1706782573
 }

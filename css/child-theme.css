@@ -14964,6 +14964,10 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+.carousel.several-elements .card {
+  width: 18rem;
+  box-shadow: 2px 3px 8px 0 #898787;
+}
 .carousel.several-elements .img-wrapper {
   max-height: 100%;
   height: 15em;
@@ -14995,9 +14999,6 @@ figure.woocommerce-product-gallery__wrapper {
     margin-right: 0;
     flex: 0 0 50%;
     justify-content: center;
-  }
-  .carousel.several-elements .carousel-inner .carousel-item .card {
-    width: 18rem;
   }
   .carousel.several-elements .img-wrapper {
     height: 13em;

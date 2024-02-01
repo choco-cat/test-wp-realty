@@ -13,8 +13,8 @@ $realty_query = new WP_Query( $args );
 
 <?php
 if ( $realty_query->have_posts() ) { ?>
-    <div id="carouselExample" class="carousel several-elements" data-ride="carousel">
-        <div class="carousel-inner p-0">
+    <div id="carouselHome" class="carousel several-elements" data-ride="carousel">
+        <div class="carousel-inner py-4">
 			<?php
 			while ( $realty_query->have_posts() ) {
 				$realty_query->the_post();
@@ -53,9 +53,8 @@ if ( $realty_query->have_posts() ) { ?>
                                             class="fw-bold me-2"><?= __( 'City', THEME_TEXTDOMAIN ) ?></span><span><?= $selected_city_title ?></span>
                                 </li>
 							<?php endif ?>
-                            <li class="list-group-item overflow-hidden"><span
-                                        class="fw-bold me-2"><?= __( 'Address', THEME_TEXTDOMAIN ) ?></span><span
-                                        class="text-truncate"><?= $address ?></span>
+                            <li class="list-group-item overflow-hidden text-truncate"><span
+                                        class="fw-bold me-2"><?= __( 'Address', THEME_TEXTDOMAIN ) ?></span><span><?= $address ?></span>
                             </li>
                             <li class="list-group-item"><span
                                         class="fw-bold me-2"><?= __( 'Price', THEME_TEXTDOMAIN ) ?></span><span><?= $price ?></span>
@@ -75,11 +74,11 @@ if ( $realty_query->have_posts() ) { ?>
 			wp_reset_postdata();
 			?>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
