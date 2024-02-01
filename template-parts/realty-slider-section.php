@@ -36,7 +36,7 @@ if ( $realty_query->have_posts() ) { ?>
 				?>
 
                 <div class="carousel-item <?= $active ? 'active' : '' ?>">
-                    <div class="card">
+                    <div class="card border-0 shadow p-3 mb-5 bg-body-tertiary rounded">
 						<?php if ( $thumbnail ): ?>
                             <div class="img-wrapper">
                                 <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">

@@ -37,7 +37,7 @@ if ( $realty_query->have_posts() ) { ?>
 			?>
 
             <div class="col">
-                <div class="card h-100">
+                <div class="card border-0 h-100 shadow p-3 mb-5 bg-body-tertiary rounded">
                     <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">
                     <div class="card-body pb-0">
                         <h5 class="card-title"><?= $title ?></h5>
