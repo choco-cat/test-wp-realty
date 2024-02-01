@@ -45,7 +45,7 @@ if ( $realty_query->have_posts() ) { ?>
                     </div>
                     <div class="p-2 d-flex justify-content-center">
                         <a href="<?= $link ?>"
-                           class="btn btn-primary"><?= __( 'Read more', THEME_TEXTDOMAIN ) ?></a>
+                           class="btn btn-primary"><?= __( 'Read More', THEME_TEXTDOMAIN ) ?></a>
                     </div>
                 </div>
             </div>
@@ -56,6 +56,6 @@ if ( $realty_query->have_posts() ) { ?>
     </div>
 	<?php
 } else {
-	echo __( 'No realty posts found.', THEME_TEXTDOMAIN );
+	echo __( 'No Realty Found', THEME_TEXTDOMAIN );
 }
 ?>

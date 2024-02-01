@@ -51,7 +51,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( THEME_TEXTDOMAIN, get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( THEME_TEXTDOMAIN, THEME_DIR . '/languages' );
 }
 
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );

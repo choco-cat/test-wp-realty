@@ -30,10 +30,10 @@ function register_post_types() {
 		'attributes'               => __( 'Realty Attributes', THEME_TEXTDOMAIN ),
 		'name_admin_bar'           => __( 'Realty', THEME_TEXTDOMAIN ),
 		'item_published'           => __( 'Realty Published', THEME_TEXTDOMAIN ),
-		'item_published_privately' => __( 'Realty Published Privately.', THEME_TEXTDOMAIN ),
-		'item_reverted_to_draft'   => __( 'Realty Reverted to Draft.', THEME_TEXTDOMAIN ),
+		'item_published_privately' => __( 'Realty Published Privately', THEME_TEXTDOMAIN ),
+		'item_reverted_to_draft'   => __( 'Realty Reverted to Draft', THEME_TEXTDOMAIN ),
 		'item_scheduled'           => __( 'Realty Scheduled', THEME_TEXTDOMAIN ),
-		'item_updated'             => __( 'Realty Updated.', THEME_TEXTDOMAIN ),
+		'item_updated'             => __( 'Realty Updated', THEME_TEXTDOMAIN ),
 	];
 
 	$args = [
@@ -117,16 +117,14 @@ function register_post_types() {
 		'set_featured_image'       => __( 'Set Featured Image for This City', THEME_TEXTDOMAIN ),
 		'remove_featured_image'    => __( 'Remove Featured Image for This City', THEME_TEXTDOMAIN ),
 		'use_featured_image'       => __( 'Use As Featured Image for This City', THEME_TEXTDOMAIN ),
-		'uploaded_to_this_item'    => __( 'Upload to This City', THEME_TEXTDOMAIN ),
 		'filter_items_list'        => __( 'Filter Cities list', THEME_TEXTDOMAIN ),
 		'items_list_navigation'    => __( 'Cities List Navigation', THEME_TEXTDOMAIN ),
 		'items_list'               => __( 'Cities List', THEME_TEXTDOMAIN ),
-		'attributes'               => __( 'City Attributes', THEME_TEXTDOMAIN ),
 		'name_admin_bar'           => __( 'City', THEME_TEXTDOMAIN ),
 		'item_published'           => __( 'City Published', THEME_TEXTDOMAIN ),
-		'item_published_privately' => __( 'City Published Privately.', THEME_TEXTDOMAIN ),
+		'item_published_privately' => __( 'City Published Privately', THEME_TEXTDOMAIN ),
 		'item_scheduled'           => __( 'City Scheduled', THEME_TEXTDOMAIN ),
-		'item_updated'             => __( 'City Updated.', THEME_TEXTDOMAIN ),
+		'item_updated'             => __( 'City Updated', THEME_TEXTDOMAIN ),
 	];
 
 	$args = [
@@ -177,7 +175,7 @@ function render_city_metabox( $post ) {
 	$cities        = get_posts( array( 'post_type' => 'city', 'posts_per_page' => - 1 ) );
 
 	echo '<select id="selected_city" name="selected_city">';
-	echo '<option value="">Select a City</option>';
+	echo '<option value="">' . __( 'Select a City', THEME_TEXTDOMAIN ) . '</option>';
 
 	foreach ( $cities as $city ) {
 		echo '<option value="' . $city->ID . '" ' . selected( $selected_city, $city->ID, false ) . '>' . esc_html( $city->post_title ) . '</option>';

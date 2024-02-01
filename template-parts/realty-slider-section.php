@@ -64,7 +64,7 @@ if ( $realty_query->have_posts() ) { ?>
                         </ul>
                         <div class="p-2 d-flex justify-content-center">
                             <a href="<?= $link ?>"
-                               class="btn btn-primary"><?= __( 'Read more', THEME_TEXTDOMAIN ) ?></a>
+                               class="btn btn-primary"><?= __( 'Read More', THEME_TEXTDOMAIN ) ?></a>
                         </div>
                     </div>
                 </div>
