@@ -19,6 +19,7 @@ $wrapper_id = 'full-width-page-wrapper';
                 <div class="col-md-12 content-area" id="primary">
                     <main class="site-main" id="main" role="main">
                         <?php get_template_part( 'template-parts/realty-slider-section' ) ?>
+                        <?php get_template_part( 'template-parts/cities-section' ) ?>
                     </main>
                 </div><!-- #primary -->
             </div><!-- .row -->

@@ -9,10 +9,9 @@ $args = array(
 );
 
 $realty_query = new WP_Query( $args );
-?>
 
-<?php
 if ( $realty_query->have_posts() ) { ?>
+    <h2><?= __( 'Last Realty', THEME_TEXTDOMAIN ) ?></h2>
     <div id="carouselHome" class="carousel several-elements" data-ride="carousel">
         <div class="carousel-inner py-4">
 			<?php
@@ -40,7 +39,7 @@ if ( $realty_query->have_posts() ) { ?>
                     <div class="card">
 						<?php if ( $thumbnail ): ?>
                             <div class="img-wrapper">
-                                <img src="<?= $thumbnail ?>" class="card-img-top" alt="...">
+                                <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">
                             </div>
 						<?php endif ?>
                         <div class="card-body">
@@ -88,6 +87,3 @@ if ( $realty_query->have_posts() ) { ?>
 	echo __( 'No realty posts found.', THEME_TEXTDOMAIN );
 }
 ?>
-
-
-

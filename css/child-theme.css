@@ -15015,6 +15015,10 @@ figure.woocommerce-product-gallery__wrapper {
   }
 }
 
+.card-text p {
+  margin-bottom: 0.8em;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
