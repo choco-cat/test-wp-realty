@@ -1,6 +1,6 @@
 {
     "key": "group_65ba8b8d89fe9",
-    "title": "Home Page Settings",
+    "title": "Настройки домашней страницы",
     "fields": [
         {
             "key": "field_65ba8b8ee6a37",
@@ -65,5 +65,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1706782573
+    "modified": 1706893492
 }

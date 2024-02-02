@@ -1,6 +1,6 @@
 {
     "key": "group_65ba37a968a34",
-    "title": "Realty Meta Fields",
+    "title": "Атрибуты объекта",
     "fields": [
         {
             "key": "field_65ba37f9da295",
@@ -157,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1706766784
+    "modified": 1706893500
 }
