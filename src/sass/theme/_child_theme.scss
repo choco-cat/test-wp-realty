@@ -3,3 +3,19 @@
 .card-text p {
   margin-bottom: $spacer;
 }
+
+.multi-truncate-2 > * {
+  margin: 0;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.multi-truncate-4 > * {
+  margin: 0;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

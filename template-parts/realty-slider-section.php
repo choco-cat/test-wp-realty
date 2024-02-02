@@ -38,13 +38,14 @@ if ( $realty_query->have_posts() ) { ?>
                 <div class="carousel-item <?= $active ? 'active' : '' ?>">
                     <div class="card border-0 shadow p-3 mb-5 bg-body-tertiary rounded">
 						<?php if ( $thumbnail ): ?>
-                            <div class="img-wrapper">
+                            <div class="img-wrapper ratio ratio-4x3">
                                 <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">
                             </div>
 						<?php endif ?>
                         <div class="card-body">
-                            <h5 class="card-title"><?= $title ?></h5>
-                            <div class="card-text text-truncate"><?= $content; ?></div>
+                            <a class="multi-truncate-2" href="<?= $link ?>">
+                                <h5 class="card-title"><?= $title ?></h5>
+                            </a>
                         </div>
                         <ul class="list-group list-group-flush">
 							<?php if ( $selected_city_title ) : ?>
@@ -64,7 +65,8 @@ if ( $realty_query->have_posts() ) { ?>
                         </ul>
                         <div class="p-2 d-flex justify-content-center">
                             <a href="<?= $link ?>"
-                               class="btn btn-primary"><?= __( 'Read More', THEME_TEXTDOMAIN ) ?></a>
+                               class="btn btn-primary"><?= __( 'Read More', THEME_TEXTDOMAIN ) ?>
+                            </a>
                         </div>
                     </div>
                 </div>

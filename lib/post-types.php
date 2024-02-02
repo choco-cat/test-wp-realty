@@ -66,8 +66,8 @@ function register_post_types() {
 	 * Realty Type Taxonomy
 	 */
 	$labels = [
-		'name'          => _x( 'Realty Types', 'taxonomy general name', THEME_TEXTDOMAIN ),
-		'singular_name' => _x( 'Realty Type', 'taxonomy singular name', THEME_TEXTDOMAIN ),
+		'name'          => __( 'Realty Type', THEME_TEXTDOMAIN ),
+		'singular_name' => __( 'Realty Type', THEME_TEXTDOMAIN ),
 		'search_items'  => __( 'Search Realty Types', THEME_TEXTDOMAIN ),
 		'all_items'     => __( 'All Realty Types', THEME_TEXTDOMAIN ),
 		'edit_item'     => __( 'Edit Realty Type', THEME_TEXTDOMAIN ),

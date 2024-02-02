@@ -37,11 +37,13 @@ if ( $realty_query->have_posts() ) { ?>
 			?>
 
             <div class="col">
-                <div class="card border-0 h-100 shadow p-3 mb-5 bg-body-tertiary rounded">
-                    <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">
+                <div class="card border-0 shadow p-3 mb-5 bg-body-tertiary rounded">
+                    <div class="ratio ratio-4x3">
+                        <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">
+                    </div>
                     <div class="card-body pb-0">
                         <h5 class="card-title"><?= $title ?></h5>
-                        <div class="card-text"><?= $content ?></div>
+                        <div class="card-text multi-truncate-4"><?= $content ?></div>
                     </div>
                     <div class="p-2 d-flex justify-content-center">
                         <a href="<?= $link ?>"
@@ -56,6 +58,6 @@ if ( $realty_query->have_posts() ) { ?>
     </div>
 	<?php
 } else {
-	echo __( 'No Realty Found', THEME_TEXTDOMAIN );
+	echo __( 'No Cities Found', THEME_TEXTDOMAIN );
 }
 ?>
