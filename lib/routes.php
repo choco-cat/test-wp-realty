@@ -29,8 +29,14 @@ function save_realty( WP_REST_Request $request ) {
 	$post_id = wp_insert_post( $save );
 	acf_save_post( $post_id );
 
+	$realty_data = get_realty_object( $post_id );
+
+	ob_start();
+	get_template_part_with_params( 'template-parts/realty-slider-section/item', ['vars' => $realty_data] );
+	$content = ob_get_clean();
+
 	wp_send_json( [
 		'message' => 'success',
-		'post'    => get_post( $post_id )
+		'post'    => $content,
 	] );
 }
