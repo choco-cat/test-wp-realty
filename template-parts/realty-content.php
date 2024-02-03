@@ -45,7 +45,7 @@ $gallery = get_field( 'gallery' );
         </div>
 	<?php endif ?>
 
-    <div class="entry-content">
+    <div class="entry-content my-4">
 		<?php the_content(); ?>
     </div><!-- .entry-content -->
 
