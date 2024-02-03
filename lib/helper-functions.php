@@ -49,20 +49,20 @@ function get_realty_types_select() {
 	return create_select_html( $field_name, $label, $options );
 }
 
-function get_realty_object($post_id) {
-	$thumbnail_id = get_post_thumbnail_id($post_id);
-	$thumbnail = null;
+function get_realty_object( $post_id ) {
+	$thumbnail_id = get_post_thumbnail_id( $post_id );
+	$thumbnail    = null;
 
 	if ( $thumbnail_id ) {
 		$image_url = wp_get_attachment_image_src( $thumbnail_id, 'medium' );
 		$thumbnail = $image_url[0];
 	}
 
-	$city_id = get_post_meta( $post_id, '_selected_city', true );
+	$city_id             = get_post_meta( $post_id, '_selected_city', true );
 	$selected_city_title = $city_id ? get_the_title( $city_id ) : null;
 
 	$terms = get_the_terms( $post_id, 'realty_type' );
-	$type = $terms ? $terms[0]->name : '';
+	$type  = $terms ? $terms[0]->name : '';
 
 	return array(
 		'city'      => $selected_city_title,
@@ -77,7 +77,45 @@ function get_realty_object($post_id) {
 	);
 }
 
-function get_template_part_with_params($path, array $params = array()) {
+function get_template_part_with_params( $path, array $params = array() ) {
 	extract( $params );
 	include( locate_template( $path . '.php' ) );
+}
+
+function understrap_child_post_nav() {
+	global $post;
+	if ( ! $post ) {
+		return;
+	}
+
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+    <nav class="container navigation post-navigation">
+        <h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'understrap' ); ?></h2>
+        <ul class="pagination justify-content-center">
+			<?php
+			if ( get_previous_post_link() ) { ?>
+                <li class="page-item">
+					<?php
+					previous_post_link( '<span class="nav-previous page-link">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link', 'understrap' ) );
+					?>
+                </li>
+               <?php
+                }
+                if ( get_next_post_link() ) { ?>
+                <li class="page-item">
+					<?php
+					next_post_link( '<span class="nav-next page-link">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
+					?>
+                </li>
+			<?php }
+			?>
+        </ul>
+    </nav><!-- .post-navigation -->
+	<?php
 }

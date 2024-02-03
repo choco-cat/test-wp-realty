@@ -15042,6 +15042,10 @@ figure.woocommerce-product-gallery__wrapper {
   overflow: visible;
 }
 
+.page-link > a {
+  text-decoration: none;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

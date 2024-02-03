@@ -6745,6 +6745,9 @@
 
 	var ajaxForm = (() => {
 	  const form = document.getElementById('acf-form');
+	  if (!form) {
+	    return;
+	  }
 	  form.addEventListener('submit', function (e) {
 	    e.preventDefault();
 	    const errorMessages = form.querySelectorAll('.acf-error-message');

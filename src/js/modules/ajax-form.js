@@ -1,6 +1,10 @@
 export default () => {
     const form = document.getElementById('acf-form');
 
+    if (!form) {
+        return;
+    }
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
