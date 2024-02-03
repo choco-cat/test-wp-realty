@@ -17,7 +17,7 @@ if ( have_posts() ) {
 
 $post_id = get_the_ID();
 $vars    = array(
-	'posts_per_page' => 10,
+	'posts_per_page' => COUNT_CITY_REALTY_OBJECTS,
 	'city_id'        => $post_id,
 );
 ?>
