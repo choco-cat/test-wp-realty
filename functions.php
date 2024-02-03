@@ -97,6 +97,7 @@ add_action( 'after_setup_theme', 'load_theme_dependencies', 5 );
 
 
 function init_theme() {
+	require_once('lib/helper-functions.php');
 	require_once('lib/routes.php');
 	require_once('lib/post-types.php');
 }
