@@ -185,7 +185,9 @@ function render_city_metabox( $post ) {
 }
 
 function save_city_metabox( $post_id ) {
-	if ( isset( $_POST['selected_city'] ) ) {
+	$realty_city_id = isset( $_POST['selected_city'] ) ? absint( $_POST['realty_type'] ) : 0;
+
+	if ( $realty_city_id ) {
 		update_post_meta( $post_id, '_selected_city', sanitize_text_field( $_POST['selected_city'] ) );
 	}
 }
