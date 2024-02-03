@@ -1,5 +1,5 @@
 <?php
-$posts_per_page = get_field( 'count_realty', get_queried_object() ) ?: COUNT_HOME_REALTY_OBJECTS;
+extract( $vars );
 
 $args = array(
 	'post_type'      => 'realty',
@@ -8,6 +8,15 @@ $args = array(
 	'order'          => 'DESC'
 );
 
+if ( isset( $city_id ) ) {
+	$args['meta_query'] = array(
+		array(
+			'key'     => '_selected_city',
+			'value'   => $city_id,
+			'compare' => '=',
+		),
+	);
+}
 $realty_query = new WP_Query( $args );
 
 if ( $realty_query->have_posts() ) { ?>
@@ -17,10 +26,10 @@ if ( $realty_query->have_posts() ) { ?>
 			<?php
 			while ( $realty_query->have_posts() ) {
 				$realty_query->the_post();
-				$vars = get_realty_object(get_the_ID());
+				$vars           = get_realty_object( get_the_ID() );
 				$vars['active'] = $realty_query->current_post === 0;
 
-				get_template_part_with_params( 'template-parts/realty-slider-section/item', ['vars' => $vars] );
+				get_template_part_with_params( 'template-parts/realty-slider-section/item', [ 'vars' => $vars ] );
 			}
 			wp_reset_postdata();
 			?>
