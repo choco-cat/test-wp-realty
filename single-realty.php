@@ -35,6 +35,9 @@ $post_id = get_the_ID();
                         </div>
                         <div class="col-md-3">
                             <ul class="list-group list-group-flush">
+                                <h4>
+	                                <?= __( 'Realty Attributes', THEME_TEXTDOMAIN ) ?>
+                                </h4>
                                 <li class="list-group-item"><span
                                             class="fw-bold me-2"><?= __( 'Realty Type', THEME_TEXTDOMAIN ) ?></span><span><?= $realty['type'] ?></span>
                                 </li>
