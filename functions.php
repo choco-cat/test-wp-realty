@@ -100,6 +100,7 @@ function init_theme() {
 	require_once('lib/helper-functions.php');
 	require_once('lib/routes.php');
 	require_once('lib/post-types.php');
+	require_once('lib/acf-actions.php');
 }
 
 add_action( 'init', 'init_theme', 1 );

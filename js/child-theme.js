@@ -1147,7 +1147,7 @@
 
 	var button = button$1.exports;
 
-	var carousel$1 = {exports: {}};
+	var carousel$2 = {exports: {}};
 
 	var selectorEngine = {exports: {}};
 
@@ -1752,9 +1752,9 @@
 		  index.defineJQueryPlugin(Carousel);
 		  return Carousel;
 		});
-	} (carousel$1));
+	} (carousel$2));
 
-	var carousel = carousel$1.exports;
+	var carousel$1 = carousel$2.exports;
 
 	var collapse$1 = {exports: {}};
 
@@ -6743,42 +6743,73 @@
 	  }
 	})();
 
-	const mediaQuery = window.matchMedia('(min-width: 768px)');
-	function handleMediaChange(event) {
-	  if (event.matches) {
-	    const carouselInner = document.querySelector('.several-elements .carousel-inner');
-	    if (!carouselInner) {
-	      return;
+	var ajaxForm = (() => {
+	  const form = document.getElementById('acf-form');
+	  form.addEventListener('submit', function (e) {
+	    e.preventDefault();
+	    const formData = new FormData(form);
+	    const xhr = new XMLHttpRequest();
+	    const action = '/wp-json/api/save_realty';
+	    xhr.open('POST', action, true);
+	    xhr.onload = function () {
+	      if (xhr.status >= 200 && xhr.status < 400) {
+	        console.log('Form submitted successfully');
+	        console.log(xhr.responseText);
+	      } else {
+	        console.error('Form submit error');
+	        console.error(xhr.statusText);
+	      }
+	    };
+	    xhr.onerror = function () {
+	      console.error('Form submit error');
+	    };
+	    xhr.send(formData);
+	  });
+	});
+
+	var carousel = (() => {
+	  const mediaQuery = window.matchMedia('(min-width: 768px)');
+	  function handleMediaChange(event) {
+	    if (event.matches) {
+	      const carouselInner = document.querySelector('.several-elements .carousel-inner');
+	      if (!carouselInner) {
+	        return;
+	      }
+	      const cardWidth = carouselInner.querySelector('.carousel-item').offsetWidth;
+	      let scrollPosition = 0;
+	      document.querySelector('.carousel-control-next').addEventListener('click', () => {
+	        const carouselWidth = carouselInner.scrollWidth;
+	        if (scrollPosition < carouselWidth - cardWidth * 4) {
+	          scrollPosition += cardWidth;
+	          carouselInner.scrollTo({
+	            left: scrollPosition,
+	            behavior: 'smooth'
+	          });
+	        }
+	      });
+	      document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+	        if (scrollPosition > 0) {
+	          scrollPosition -= cardWidth;
+	          carouselInner.scrollTo({
+	            left: scrollPosition,
+	            behavior: 'smooth'
+	          });
+	        }
+	      });
 	    }
-	    const cardWidth = carouselInner.querySelector('.carousel-item').offsetWidth;
-	    let scrollPosition = 0;
-	    document.querySelector('.carousel-control-next').addEventListener('click', () => {
-	      const carouselWidth = carouselInner.scrollWidth;
-	      if (scrollPosition < carouselWidth - cardWidth * 4) {
-	        scrollPosition += cardWidth;
-	        carouselInner.scrollTo({
-	          left: scrollPosition,
-	          behavior: 'smooth'
-	        });
-	      }
-	    });
-	    document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-	      if (scrollPosition > 0) {
-	        scrollPosition -= cardWidth;
-	        carouselInner.scrollTo({
-	          left: scrollPosition,
-	          behavior: 'smooth'
-	        });
-	      }
-	    });
 	  }
-	}
-	mediaQuery.addEventListener('change', handleMediaChange);
-	handleMediaChange(mediaQuery);
+	  mediaQuery.addEventListener('change', handleMediaChange);
+	  handleMediaChange(mediaQuery);
+	});
+
+	document.addEventListener('DOMContentLoaded', function () {
+	  ajaxForm();
+	  carousel();
+	});
 
 	exports.Alert = alert;
 	exports.Button = button;
-	exports.Carousel = carousel;
+	exports.Carousel = carousel$1;
 	exports.Collapse = collapse;
 	exports.Dropdown = dropdown;
 	exports.Modal = modal;
