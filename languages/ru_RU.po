@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Understrap\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/understrap\n"
 "POT-Creation-Date: 2022-10-26T09:38:35+00:00\n"
-"PO-Revision-Date: 2024-02-02 18:16+0300\n"
+"PO-Revision-Date: 2024-02-03 14:17+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -527,6 +527,9 @@ msgstr "Поиск объекта"
 
 msgid "Upload to This Realty"
 msgstr "Загрузить в объект"
+
+msgid "Realty Object Added"
+msgstr "Объект добавлен"
 
 msgid "Filter Realty list"
 msgstr "Фильтр списка объектов"
