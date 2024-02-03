@@ -24,7 +24,7 @@ export default () => {
             if (xhr.status >= 200 && xhr.status < 400) {
                 console.log('Form submitted successfully');
                 const responseData = JSON.parse(xhr.responseText);
-                const carouselInner = document.querySelector('#carouselHome .carousel-inner');
+                const carouselInner = document.querySelector('#carouselRealty .carousel-inner');
 
                 if (carouselInner && responseData.message === 'success') {
                     carouselInner.insertAdjacentHTML('afterbegin', responseData.post);

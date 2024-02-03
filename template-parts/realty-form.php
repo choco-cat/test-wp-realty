@@ -24,8 +24,7 @@ acf_form( [
 	'return'             => home_url(),
 	'html_after_fields'  => $realty_types . $realty_cities,
 	'html_submit_button' => '<div class="d-grid gap-2">
-<input type="submit" class="btn btn-outline-primary btn-lg"' .
+		<input type="submit" class="btn btn-outline-primary btn-lg"' .
 	                        ' value="' . __( 'Submit' ) . '">
-</div>'
-,
+		</div>',
 ] );
