@@ -42,7 +42,7 @@ if ( $realty_query->have_posts() ) { ?>
                         <img src="<?= $thumbnail ?>" class="card-img-top" alt="<?= $title ?>">
                     </div>
                     <div class="card-body pb-0">
-                        <h5 class="card-title"><?= $title ?></h5>
+                        <a href="<?= $link ?>"><h5 class="card-title"><?= $title ?></h5> </a>
                         <div class="card-text multi-truncate-4"><?= $content ?></div>
                     </div>
                     <div class="p-2 d-flex justify-content-center">

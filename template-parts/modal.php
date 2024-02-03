@@ -10,7 +10,7 @@
 	            <?php echo __('Realty Object Added', THEME_TEXTDOMAIN); ?>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?php echo __('Close'); ?></button>
+                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal"><?php echo __('Close'); ?></button>
             </div>
         </div>
     </div>

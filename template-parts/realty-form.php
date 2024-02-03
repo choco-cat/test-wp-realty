@@ -1,6 +1,10 @@
 <?php
-// TODO: check admin permissions
-// TODO: add bootstrap classes
+//$current_user = wp_get_current_user();
+
+if ( ! current_user_can( 'administrator' ) ) {
+	return;
+}
+
 $realty_types  = get_realty_types_select();
 $realty_cities = get_city_select();
 
@@ -14,12 +18,14 @@ acf_form( [
 		'post_status' => 'publish',
 		'post_type'   => 'realty'
 	),
-	// TODO: move field_groups to constants
-	'field_groups'      => [ 6 ],
+	'field_groups'      => [ REALTY_ACF_GROUP_ID ],
 	'submit_value'      => __( 'Submit' ),
 	'uploader'          => 'basic',
 	'return'             => home_url(),
 	'html_after_fields'  => $realty_types . $realty_cities,
-	'html_submit_button' => '<input type="submit" class="btn btn-primary"' .
-	                        ' value="' . __( 'Submit' ) . '">',
+	'html_submit_button' => '<div class="d-grid gap-2">
+<input type="submit" class="btn btn-outline-primary btn-lg"' .
+	                        ' value="' . __( 'Submit' ) . '">
+</div>'
+,
 ] );
