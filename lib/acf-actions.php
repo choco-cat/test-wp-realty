@@ -37,9 +37,22 @@ function realty_set_thumbnail( $post_id ) {
 add_action('save_post_realty', 'realty_set_thumbnail');
 
 
-function add_class_to_fields( $field, $post_id ) {
+function add_class_to_fields( $field ) {
 	$field['class'] = 'form-control form-control-lg';
 	return $field;
 }
 
 add_filter('acf/pre_render_field', 'add_class_to_fields', 10, 2);
+
+
+function custom_title_label_translation( $field ) {
+	if ( '_post_title' === $field['name'] ) {
+		$field['label'] = __( 'Title' );
+	} elseif('_post_content' === $field['name'] ) {
+		$field['label'] = __( 'Content' );
+	}
+
+	return $field;
+}
+
+add_filter( 'acf/load_field', 'custom_title_label_translation' );
