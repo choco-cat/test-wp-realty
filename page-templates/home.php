@@ -6,8 +6,9 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
+acf_form_head();
 get_header();
+
 $container = get_theme_mod( 'understrap_container_type' );
 $obj = get_queried_object();
 $wrapper_id = 'full-width-page-wrapper';
@@ -20,6 +21,7 @@ $wrapper_id = 'full-width-page-wrapper';
                     <main class="site-main" id="main" role="main">
                         <?php get_template_part( 'template-parts/realty-slider-section' ) ?>
                         <?php get_template_part( 'template-parts/cities-section' ) ?>
+                        <?php get_template_part( 'template-parts/realty-form' ) ?>
                     </main>
                 </div><!-- #primary -->
             </div><!-- .row -->
