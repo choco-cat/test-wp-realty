@@ -4,7 +4,14 @@ export default () => {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
+        const errorMessages = form.querySelectorAll('.acf-error-message');
+
+        errorMessages.forEach(errorMessage => {
+            errorMessage.remove();
+        });
+
         const formData = new FormData(form);
+
         const xhr = new XMLHttpRequest();
         const action = '/wp-json/api/save_realty';
         xhr.open('POST', action, true);
