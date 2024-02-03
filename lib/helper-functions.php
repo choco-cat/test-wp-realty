@@ -61,15 +61,19 @@ function get_realty_object($post_id) {
 	$city_id = get_post_meta( $post_id, '_selected_city', true );
 	$selected_city_title = $city_id ? get_the_title( $city_id ) : null;
 
+	$terms = get_the_terms( $post_id, 'realty_type' );
+	$type = $terms ? $terms[0]->name : '';
+
 	return array(
-		'selected_city_title' => $selected_city_title,
-		'title'               => get_the_title($post_id),
-		'address'             => get_field( 'address', $post_id ),
-		'price'               => get_field( 'price', $post_id ),
-		'square'              => get_field( 'square', $post_id ),
-		'link'                => get_permalink($post_id),
-		'content'             => get_the_content($post_id),
-		'thumbnail'           => $thumbnail,
+		'city'      => $selected_city_title,
+		'title'     => get_the_title( $post_id ),
+		'address'   => get_field( 'address', $post_id ),
+		'price'     => get_field( 'price', $post_id ),
+		'square'    => get_field( 'square', $post_id ),
+		'link'      => get_permalink( $post_id ),
+		'content'   => get_the_content( $post_id ),
+		'thumbnail' => $thumbnail,
+		'type'      => $type,
 	);
 }
 

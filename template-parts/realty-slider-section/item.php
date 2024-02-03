@@ -17,9 +17,9 @@ $active = $active ?? null;
             </a>
         </div>
         <ul class="list-group list-group-flush">
-			<?php if ( $selected_city_title ) : ?>
+			<?php if ( $city ) : ?>
                 <li class="list-group-item"><span
-                            class="fw-bold me-2"><?= __( 'City', THEME_TEXTDOMAIN ) ?></span><span><?= $selected_city_title ?></span>
+                            class="fw-bold me-2"><?= __( 'City', THEME_TEXTDOMAIN ) ?></span><span><?= $city ?></span>
                 </li>
 			<?php endif ?>
             <li class="list-group-item overflow-hidden text-truncate"><span
