@@ -6,7 +6,7 @@ function create_select_html( $field_name, $label, $options ) {
 <label for="' . $field_name . '">' . $label . '</label>
 </div >';
 	$html .= '<div class="acf-input" >';
-	$html .= '<select id="' . $field_name . '" name="' . $field_name . '" class="form-select">';
+	$html .= '<select id="' . $field_name . '" name="' . $field_name . '" class="form-select form-control-lg">';
 
 	foreach ( $options as $option ) {
 		$html .= '<option value="' . $option['value'] . '">' . $option['text'] . '</option>';

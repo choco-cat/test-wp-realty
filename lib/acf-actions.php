@@ -35,3 +35,11 @@ function realty_set_thumbnail( $post_id ) {
 }
 
 add_action('save_post_realty', 'realty_set_thumbnail');
+
+
+function add_class_to_fields( $field, $post_id ) {
+	$field['class'] = 'form-control form-control-lg';
+	return $field;
+}
+
+add_filter('acf/pre_render_field', 'add_class_to_fields', 10, 2);

@@ -15034,6 +15034,14 @@ figure.woocommerce-product-gallery__wrapper {
   overflow: hidden;
 }
 
+.acf-form-submit {
+  text-align: center;
+}
+
+#acf-form .acf-input-wrap {
+  overflow: visible;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

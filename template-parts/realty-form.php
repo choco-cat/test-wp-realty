@@ -18,6 +18,8 @@ acf_form( [
 	'field_groups'      => [ 6 ],
 	'submit_value'      => __( 'Submit' ),
 	'uploader'          => 'basic',
-	'return'            => home_url(),
-	'html_after_fields' => $realty_types . $realty_cities,
+	'return'             => home_url(),
+	'html_after_fields'  => $realty_types . $realty_cities,
+	'html_submit_button' => '<input type="submit" class="btn btn-primary"' .
+	                        ' value="' . __( 'Submit' ) . '">',
 ] );
