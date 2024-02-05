@@ -6766,6 +6766,7 @@
 	        if (carouselInner && responseData.message === 'success') {
 	          carouselInner.insertAdjacentHTML('afterbegin', responseData.post);
 	          form.reset();
+	          form.querySelector('.acf-gallery-attachments').innerHTML = '';
 	          jQuery('#successModal').modal('show');
 	        }
 	      } else {
